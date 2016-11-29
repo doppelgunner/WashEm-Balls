@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -119,7 +120,7 @@ public class GameManager : MonoBehaviour {
         _ballsOnScene = 0;
 
         //START WAVE
-        StartWave();
+        StartCoroutine(StartWave(3f));
     }
 
     // Update is called once per frame
@@ -359,7 +360,8 @@ public class GameManager : MonoBehaviour {
         _ballsOnScene += 1;
     }
 
-    void StartWave() {
+    IEnumerator StartWave(float f) {
+        yield return new WaitForSeconds(f);
         _currentWaveType = getwaveType();
         _selectedWeapon = Weapon.Type.NULL;
 
@@ -377,7 +379,7 @@ public class GameManager : MonoBehaviour {
             _spawnCounter = 0;
             _currentWave++;
             GetHarder();
-            StartWave();
+            StartWave(0f);
         }
     }
 
@@ -407,6 +409,7 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(f);
 
         //JUMP TO WIN SCENE
+        SceneManager.LoadScene("Win");
     }
 
     IEnumerator GameOver(float f) {
@@ -415,6 +418,7 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(f);
 
         //JUMP TO LOSE SCENE
+        SceneManager.LoadScene("Lose");
     }
 
     public static bool IsGameOver() {
