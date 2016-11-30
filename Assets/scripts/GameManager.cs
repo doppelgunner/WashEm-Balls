@@ -379,7 +379,7 @@ public class GameManager : MonoBehaviour {
             _spawnCounter = 0;
             _currentWave++;
             GetHarder();
-            StartWave(0f);
+            StartCoroutine(StartWave(0f));
         }
     }
 
