@@ -64,7 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\Attack.cs" />
+    <Compile Include="Assets\scripts\AudioController.cs" />
     <Compile Include="Assets\scripts\Ball.cs" />
+    <Compile Include="Assets\scripts\ButtonHover.cs" />
     <Compile Include="Assets\scripts\Button_.cs" />
     <Compile Include="Assets\scripts\Dirt.cs" />
     <Compile Include="Assets\scripts\DirtChecker.cs" />

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (EventSystem.current.IsPointerOverGameObject()) return; //EXIT UPDATE LOOP
         if (Input.GetMouseButton(0)) {
             if (_selectedTile != null) {
                 Tile tile = _selectedTile.GetComponent<Tile>();
@@ -134,6 +136,7 @@ public class GameManager : MonoBehaviour {
                     tile.SetPlaceable(false);
 
                     RemoveSelectedWeapon();
+                    AudioController.PlayPlaceSound(1f);
                 } else {
                     RemoveSelectedWeapon();
                 }

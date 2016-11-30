@@ -21,6 +21,8 @@ public class Attack : MonoBehaviour {
     private float slowFactor = 0.5f;
     [SerializeField]
     private LayerMask affectedBySplash;
+    [SerializeField]
+    private ParticleSystem splashParticle;
 
     private bool _hasTarget = false;
     private GameObject _target;
@@ -82,6 +84,9 @@ public class Attack : MonoBehaviour {
                         colliders[i].GetComponent<Dirt>().WashDamage(splashDamage);
                     }
                     //SPAWN splash effect
+                    ParticleSystem particle = Instantiate(splashParticle, transform.position, transform.rotation) as ParticleSystem;
+                    particle.Play();
+                    Destroy(particle, 0.5f);
                 }
 
                 //SLOW EFFECT
