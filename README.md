@@ -7,6 +7,7 @@ A school project for our finals exam
 
 ### Links
 * Play the game here: https://doppelgunner.github.io/WashEm-Balls/
+* [Watch the youtube demo here](https://youtu.be/pccja6-PBeE)
 * [Download unity package here](https://github.com/doppelgunner/WashEm-Balls/releases/)
 
 * My Accounts 
