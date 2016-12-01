@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour {
         _delayBeforeEnd = delayBeforeEnd;
         _delayBeforeStart = delayBeforeStart;
 
-         _currentWave = 1;
+        _currentWave = 1;
         _spawnCounter = 0;
         _highlightedCells = new List<GameObject>();
         _selectedWeapon = Weapon.Type.NULL;
@@ -369,7 +369,6 @@ public class GameManager : MonoBehaviour {
     IEnumerator StartWave(float f) {
         yield return new WaitForSeconds(f);
         _currentWaveType = getwaveType();
-        _selectedWeapon = Weapon.Type.NULL;
 
         notifText.text = "WAVE: " + _currentWave;
         notifAnimator.SetTrigger("GoIn");
