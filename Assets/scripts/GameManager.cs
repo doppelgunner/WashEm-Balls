@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour {
     private static GameObject _bucketCatapult;
 
     private static int _ballsOnScene;
+    private static int _dirtsOnScene;
 
     private static float _delayBeforeEnd;
     private static float _delayBeforeStart;
@@ -119,6 +120,7 @@ public class GameManager : MonoBehaviour {
         _lifeText.text = "" + _currentLives;
 
         _ballsOnScene = 0;
+        _dirtsOnScene = 0;
 
         //START WAVE
         StartCoroutine(StartWave(3f));
@@ -346,6 +348,7 @@ public class GameManager : MonoBehaviour {
         if (_currentLives < 0) _currentLives = 0;
         _lifeText.text = "" + _currentLives;
     }
+
 
     public static void DecreaseBallsOnScene() {
         _ballsOnScene -= 1;

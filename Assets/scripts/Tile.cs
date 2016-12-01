@@ -16,7 +16,8 @@ public class Tile : MonoBehaviour {
     void Start () {
         _sr = GetComponent<SpriteRenderer>();
         if (placeable) {
-            gameObject.AddComponent<BoxCollider2D>();
+            gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+           
         } else {
             BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
             collider.isTrigger = true;
